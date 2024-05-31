@@ -1,2 +1,4 @@
 # newsApp-compose-multiplatform
-A new application to show news, for both android and IOS 
+A news application to show news, for both android and IOS 
+
+## Work in Progress.......
