@@ -1,5 +1,6 @@
 package domain.remote
 
+import domain.model.Articles
 import domain.model.MainResponse
 import domain.model.RequestState
 import kotlinx.coroutines.flow.Flow
@@ -12,5 +13,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface ApiService {
 
-    suspend fun getTopHeadline(): Flow<RequestState<MainResponse>>
+    suspend fun getTopHeadline(): Flow<RequestState<List<Articles>>>
 }
