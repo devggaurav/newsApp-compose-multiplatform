@@ -7,6 +7,7 @@ import domain.model.RequestState
 import domain.remote.ApiService
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -21,8 +22,8 @@ class NewsViewModel(
 ) : ScreenModel {
 
 
-    private val _news = MutableStateFlow<RequestState<List<Articles>>>(RequestState.Idle)
-    val news: StateFlow<RequestState<List<Articles>>> = _news
+    private val _news = MutableStateFlow<RequestState<List<Articles?>>>(RequestState.Idle)
+    val news: StateFlow<RequestState<List<Articles?>>> = _news.asStateFlow()
 
 
     init {
@@ -33,10 +34,12 @@ class NewsViewModel(
 
         screenModelScope.launch {
 
-            newsRepository.getTopHeadline().collectLatest {
+            newsRepository.getTopHeadline().let {
+                it.collectLatest {
 
-                _news.value = it
+                    _news.value = it
 
+                }
             }
 
 

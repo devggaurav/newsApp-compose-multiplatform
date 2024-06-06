@@ -31,18 +31,16 @@ kotlin {
     }
     
     sourceSets {
-        
+
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.android)
-            implementation(libs.koin.android)
-            implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material)
+            implementation(compose.material3)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
@@ -50,7 +48,7 @@ kotlin {
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.voyager.navigator)
-            implementation(libs.voyager.screenModel)
+            implementation(libs.voyager.screen.model)
             implementation(libs.voyager.transitions)
             implementation(libs.voyager.koin)
 
@@ -71,6 +69,7 @@ kotlin {
             implementation(libs.ktor.client.darwin)
         }
     }
+
     task("testClasses"){}
 }
 

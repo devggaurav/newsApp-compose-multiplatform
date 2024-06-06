@@ -45,12 +45,15 @@ class ApiServiceImpl : ApiService {
 
     }
 
-    override suspend fun getTopHeadline(): Flow<RequestState<List<Articles>>> {
+    override suspend fun getTopHeadline(): Flow<RequestState<List<Articles?>>> {
         return flow {
             try {
                 val response = httpClient.get(BASE_URL)
+                print(response)
                 if (response.status.value == 200) {
-                    val apiResponse = Json.decodeFromString<MainResponse>(response.body())
+                    val json = Json { ignoreUnknownKeys = true }
+                    val apiResponse = json.decodeFromString<MainResponse>(response.body())
+                     print(apiResponse)
                     val articles = apiResponse.articles
                     emit(RequestState.Success(articles))
                 } else {

@@ -13,5 +13,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface ApiService {
 
-    suspend fun getTopHeadline(): Flow<RequestState<List<Articles>>>
+    suspend fun getTopHeadline(): Flow<RequestState<List<Articles?>>>
 }

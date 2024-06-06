@@ -2,6 +2,7 @@ package di
 
 import data.ApiServiceImpl
 import domain.remote.ApiService
+import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import presentation.NewsViewModel
 
@@ -18,4 +19,12 @@ val appModule = module {
     factory {
         NewsViewModel(get())
     }
+}
+
+fun initializeKoin() {
+
+    startKoin {
+        modules(appModule)
+    }
+
 }
