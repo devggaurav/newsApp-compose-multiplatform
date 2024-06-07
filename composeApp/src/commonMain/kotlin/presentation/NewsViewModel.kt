@@ -1,5 +1,8 @@
 package presentation
 
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import cafe.adriel.voyager.core.model.ScreenModel
 import cafe.adriel.voyager.core.model.screenModelScope
 import domain.model.Articles
@@ -22,8 +25,9 @@ class NewsViewModel(
 ) : ScreenModel {
 
 
-    private val _news = MutableStateFlow<RequestState<List<Articles?>>>(RequestState.Idle)
-    val news: StateFlow<RequestState<List<Articles?>>> = _news.asStateFlow()
+    private val _news: MutableState<RequestState<List<Articles?>>> =
+        mutableStateOf(RequestState.Idle)
+    val news: State<RequestState<List<Articles?>>> = _news
 
 
     init {
