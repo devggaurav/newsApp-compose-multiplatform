@@ -7,7 +7,6 @@ androidx-activityCompose = "1.9.0"
 compose = "1.6.2"
 compose-plugin = "1.6.10"
 kotlin = "2.0.0"
-ktor = "2.3.9"
 date-time = "0.5.0"
 multiplatformSettings = "1.1.1"
 voyager = "1.0.0"
@@ -17,14 +16,10 @@ koinComposeMultiplatform = "1.2.0-alpha3"
 realm = "2.0.0"
 coroutines = "1.8.0"
 statelyCommon = "2.0.5"
+ktor = "3.0.0-wasm2"
+coil3 = "3.0.0-alpha06"
+kotlinxCoroutinesSwing = "1.8.0"
 
-androidx-appcompat = "1.6.1"
-androidx-constraintlayout = "2.1.4"
-androidx-core-ktx = "1.13.1"
-androidx-espresso-core = "3.5.1"
-androidx-material = "1.12.0"
-androidx-test-junit = "1.1.5"
-junit = "4.13.2"
 
 
 [libraries]
@@ -50,6 +45,16 @@ ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
+coil-compose-core = { module = "io.coil-kt.coil3:coil-compose-core", version.ref = "coil3" }
+coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil3" }
+coil-mp = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" }
+
+kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinxCoroutinesSwing" }
+
+
 
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "date-time" }
 

@@ -31,11 +31,17 @@ kotlin {
     }
     
     sourceSets {
+        all {
+            languageSettings {
+                optIn("org.jetbrains.compose.resources.ExperimentalResourceApi")
+            }
+        }
 
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.android)
+            implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -64,6 +70,11 @@ kotlin {
             implementation(libs.mongodb.realm)
             implementation(libs.kotlin.coroutines)
             implementation(libs.stately.common)
+
+            implementation(libs.coil.compose.core)
+            implementation(libs.coil.mp)
+            implementation(libs.coil.network.ktor)
+            implementation(libs.coil.compose)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)

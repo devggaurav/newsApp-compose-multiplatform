@@ -41,6 +41,8 @@ fun NewsItem(article: Articles) {
             }
 
 
+
+
         }
 
     }
