@@ -66,7 +66,7 @@ fun NewsItem(article: Articles) {
                 Text(
                     it,
                     maxLines = 3,
-                    fontSize = 15.sp,
+                    fontSize = 17.sp,
                     fontFamily = getBoldFont(),
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.padding(
