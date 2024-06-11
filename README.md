@@ -1,3 +1,4 @@
+
 # This is a Compose Multiplatform News Application targeting Android, iOS.
 
 
@@ -6,8 +7,8 @@
 
 
 [iPhone]
-<img src="https://github.com/devggaurav/newsApp-compose-multiplatform/assets/42926809/22fc9afd-fb66-4a96-9e5c-537e168b498d" height="550px"> [Android]
-<img src="https://github.com/devggaurav/newsApp-compose-multiplatform/assets/42926809/66b22229-fcc5-4f42-b04a-a735717b714d" height="550px">
+<img src="https://github.com/devggaurav/newsApp-compose-multiplatform/assets/42926809/85d58435-ee1a-4d84-ba12-3e82e63564e7" height="550px"> [Android]
+<img src="https://github.com/devggaurav/newsApp-compose-multiplatform/assets/42926809/0406acf3-94ad-44ea-9261-99af89410cdd" height="550px">
 
 
 
