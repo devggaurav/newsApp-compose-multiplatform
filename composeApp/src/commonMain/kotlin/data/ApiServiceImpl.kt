@@ -68,7 +68,7 @@ class ApiServiceImpl : ApiService {
 
     companion object {
 
-        const val BASE_URL = "https://newsapi.org/v2/top-headlines?country=in"
+        const val BASE_URL = "https://newsapi.org/v2/top-headlines?sources=bbc-news"
         const val API_KEY = "f1ced744789e4137b0485b3e51749b48"
 
     }
