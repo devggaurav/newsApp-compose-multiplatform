@@ -16,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
@@ -33,7 +35,7 @@ fun NewsItem(article: Articles) {
 
 
     Card(
-        modifier = Modifier.fillMaxWidth().height(300.dp).padding(8.dp),
+        modifier = Modifier.fillMaxWidth().padding(16.dp),
         shape = RoundedCornerShape(5.dp),
         colors = CardDefaults.cardColors(
             containerColor = Color.White,
@@ -46,7 +48,7 @@ fun NewsItem(article: Articles) {
             article.urlImage?.let {
                 AsyncImage(
                     modifier = Modifier.fillMaxWidth()
-                        .height(220.dp),
+                        .height(200.dp),
                     model = article.urlImage,
                     contentScale = ContentScale.FillBounds,
                     contentDescription = null
@@ -58,8 +60,9 @@ fun NewsItem(article: Articles) {
                 Text(
                     it,
                     maxLines = 2,
+                    fontWeight = FontWeight.Bold,
                     overflow = TextOverflow.Ellipsis,
-                    modifier = Modifier.padding(top = 8.dp, start = 8.dp, end = 8.dp, bottom = 8.dp)
+                    modifier = Modifier.padding(top = 8.dp, start = 12.dp, end =12.dp, bottom = 8.dp)
                 )
             }
 
