@@ -1,6 +1,7 @@
 package presentation
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -38,7 +39,7 @@ import utils.getRegularFont
 //
 
 @Composable
-fun NewsItem(article: Articles) {
+fun NewsItem(article: Articles,onItemClick: (Articles) -> Unit) {
 
 
     Card(
@@ -48,7 +49,9 @@ fun NewsItem(article: Articles) {
             containerColor = Color.Transparent
         )
     ) {
-        Row(
+        Row(modifier = Modifier.clickable {
+            onItemClick(article)
+        }
         ) {
 
             article.urlImage?.let {

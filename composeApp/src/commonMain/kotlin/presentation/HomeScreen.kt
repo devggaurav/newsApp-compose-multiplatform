@@ -23,8 +23,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getScreenModel
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import domain.model.RequestState
 import ui.theme.darkBlue
+import ui.theme.onPrimaryContainerLight
 import ui.theme.primaryContainerDark
 import ui.theme.primaryContainerLight
 import ui.theme.primaryLight
@@ -41,13 +44,13 @@ class HomeScreen : Screen {
 
     @Composable
     override fun Content() {
-
+        val navigator = LocalNavigator.currentOrThrow
         val viewModel = getScreenModel<NewsViewModel>()
 
         val news = viewModel.news
 
         Scaffold(
-            containerColor = darkBlue,
+            containerColor = onPrimaryContainerLight,
             topBar = {
                 Text(
                     "Top HeadLines",
@@ -60,10 +63,11 @@ class HomeScreen : Screen {
             },
 
 
-        ) {
+            ) {
 
             Column(
-                modifier = Modifier.fillMaxSize().padding(top = it.calculateTopPadding(), bottom = it.calculateBottomPadding()),
+                modifier = Modifier.fillMaxSize()
+                    .padding(top = it.calculateTopPadding(), bottom = it.calculateBottomPadding()),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center,
 
@@ -88,7 +92,9 @@ class HomeScreen : Screen {
 
                             items(articles) {
                                 it?.let {
-                                    NewsItem(it)
+                                    NewsItem(it) {
+                                        navigator.push(DetailsScreen(it))
+                                    }
                                 }
                             }
                         }
