@@ -3,14 +3,14 @@
 
 
 
+## ScreenShot
 
-
-***iPhone***
+### iPhone
 <img src="https://github.com/devggaurav/newsApp-compose-multiplatform/assets/42926809/a0c71762-9d38-406a-b778-bdb49a3839d5" height="550px">
 <img src="https://github.com/devggaurav/newsApp-compose-multiplatform/assets/42926809/4b76529c-c5a3-4798-ac75-06f048f8e9af" height="550px"> 
 
 
-***Android***
+### Android
 <img src="https://github.com/devggaurav/newsApp-compose-multiplatform/assets/42926809/4fe531f8-6cae-4e8b-a655-c68c140ebcbf" height="550px">
 <img src="https://github.com/devggaurav/newsApp-compose-multiplatform/assets/42926809/de2e3525-7655-4512-9deb-2c353d2b1602" height="550px">
 
